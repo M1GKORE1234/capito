@@ -1,0 +1,47 @@
+# Copy this file to .github/workflows/capito.yml in your repository.
+name: Capito
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, ready_for_review]
+  issue_comment:
+    types: [created]
+  issues:
+    types: [opened]
+  schedule:
+    - cron: '17 8 * * 1' # weekly review, every Monday morning (UTC)
+  workflow_dispatch:
+
+permissions:
+  contents: write # store answers on the capito-data branch
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: capito-${{ github.event.issue.number || github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  capito:
+    # React only to comments that talk to Capito
+    if: github.event_name != 'issue_comment' || contains(github.event.comment.body, '/capito')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # full history: Capito uses git blame to find AI-written lines
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      # Dependencies are only needed when Capito runs your tests
+      - if: github.event_name == 'pull_request' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.comment.body, '/capito quiz')
+        run: npm ci # or: yarn install --frozen-lockfile / pnpm install --frozen-lockfile
+
+      - uses: M1GKORE1234/capito@v1
+        with:
+          test-command: npm test
+          lang: en # or: it
+          secret: ${{ secrets.CAPITO_SECRET }} # optional, see README

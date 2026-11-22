@@ -1,0 +1,88 @@
+name: 'Capito — comprehension check for AI-written code'
+description: 'Asks 60-second questions about AI-written code, with answers verified by running your tests. Builds a comprehension map of your repo.'
+author: 'Alessio Kore'
+branding:
+  icon: 'help-circle'
+  color: 'purple'
+
+inputs:
+  github-token:
+    description: 'Token used to comment and to store answers on the data branch.'
+    default: ${{ github.token }}
+  test-command:
+    description: 'Command that runs your tests. It must pass on the current code.'
+    default: 'npm test'
+  lang:
+    description: 'Language of comments: en or it.'
+    default: 'en'
+  secret:
+    description: 'Optional key (e.g. secrets.CAPITO_SECRET) that makes the encrypted answers impossible to decode from the page source.'
+    default: ''
+  max-mutants:
+    description: 'How many small code changes to test per quiz (2-20). Each one runs your test suite once.'
+    default: '8'
+  options:
+    description: 'Options per question (2-4).'
+    default: '3'
+  timeout-seconds:
+    description: 'Timeout for each test run. Default: 3x the duration of the first run (min 30 s).'
+    default: ''
+  ai-only:
+    description: 'Only ask about pull requests that contain AI-written commits.'
+    default: 'true'
+  ai-markers:
+    description: 'Extra regular expressions (one per line) that mark a commit message as AI-written.'
+    default: ''
+  treat-all-as-ai:
+    description: 'Treat every line as AI-written (for code from tools that leave no trace, e.g. Lovable, Bolt, copy-pasted chats).'
+    default: 'false'
+  include:
+    description: 'Globs of source files to consider (one per line). Default: all JS/TS files.'
+    default: ''
+  exclude:
+    description: 'Extra globs to ignore (tests, build output and node_modules are always ignored).'
+    default: ''
+  review-files:
+    description: 'How many dark files the weekly review asks about (1-5).'
+    default: '2'
+  alert-on-issues:
+    description: 'Comment on new issues that mention files nobody has shown they understand.'
+    default: 'true'
+  include-drafts:
+    description: 'Also ask on draft pull requests.'
+    default: 'false'
+  anonymous:
+    description: 'Store pseudonyms instead of usernames in the ledger and map.'
+    default: 'false'
+  data-branch:
+    description: 'Branch where Capito stores ledger.json, CAPITO.md and map.json.'
+    default: 'capito-data'
+  half-life-days:
+    description: 'Days after which a correct answer is worth half (understanding fades).'
+    default: '90'
+  lines-per-proof:
+    description: 'AI-written lines covered by one correct answer.'
+    default: '40'
+  min-ai-lines:
+    description: 'Files with fewer AI lines are never called dark zones.'
+    default: '10'
+  dark-threshold:
+    description: 'Score (0-100) below which a file is a dark zone.'
+    default: '30'
+  mode:
+    description: 'auto (react to the event), review (weekly review now) or map (only update the map).'
+    default: 'auto'
+
+outputs:
+  outcome:
+    description: 'What Capito did: quiz-posted, graded, digest-created, map-updated, alerted, replied, skipped...'
+  quiz-id:
+    description: 'Id of the quiz that was posted, if any.'
+  comprehension-index:
+    description: 'Comprehension index of the repository (0-100), when the map was computed.'
+  dark-zones:
+    description: 'Number of dark zones, when the map was computed.'
+
+runs:
+  using: 'node24'
+  main: 'dist/index.js'
