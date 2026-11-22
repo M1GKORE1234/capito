@@ -243,7 +243,7 @@ Options: `--test "<cmd>"`, `--lang it`, `--base <ref>`, `--max-mutants <n>`, `--
 
 ## Capito checks itself
 
-Capito was written with an AI agent, so it runs on its own pull requests (see [`.github/workflows/capito.yml`](.github/workflows/capito.yml)). The first time it ran on `src/core/map.ts`, all three changes it tried **survived**: no test checked the exact colour boundaries of the map, the "at least 10 AI lines" rule, or that half-understood files are reviewed too. Those tests now exist ([`test/core.test.ts`](test/core.test.ts)), and the same mutants are caught.
+Capito was written with an AI agent, so we ran Capito on Capito (the workflow is in [`examples/workflows/capito-self-check.yml`](examples/workflows/capito-self-check.yml)). The first time it ran on `src/core/map.ts`, all three changes it tried **survived**: no test checked the exact colour boundaries of the map, the "at least 10 AI lines" rule, or that half-understood files are reviewed too. Those tests now exist ([`test/core.test.ts`](test/core.test.ts)), and the same mutants are caught.
 
 ## Roadmap
 
