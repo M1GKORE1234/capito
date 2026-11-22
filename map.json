@@ -1,0 +1,215 @@
+{
+  "generatedAt": "2026-11-22T13:39:17.586Z",
+  "index": 0,
+  "aiLinesTotal": 2841,
+  "linesTotal": 2841,
+  "filesWithAi": 18,
+  "darkCount": 18,
+  "darkLines": 2841,
+  "entries": [
+    {
+      "file": "src/github/run.ts",
+      "totalLines": 498,
+      "aiLines": 498,
+      "score": 0,
+      "credit": 0,
+      "needed": 13,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/i18n.ts",
+      "totalLines": 423,
+      "aiLines": 423,
+      "score": 0,
+      "credit": 0,
+      "needed": 11,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/mutate.ts",
+      "totalLines": 297,
+      "aiLines": 297,
+      "score": 0,
+      "credit": 0,
+      "needed": 8,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/cli/cli.ts",
+      "totalLines": 246,
+      "aiLines": 246,
+      "score": 0,
+      "credit": 0,
+      "needed": 7,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/quiz.ts",
+      "totalLines": 206,
+      "aiLines": 206,
+      "score": 0,
+      "credit": 0,
+      "needed": 6,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/github/api.ts",
+      "totalLines": 197,
+      "aiLines": 197,
+      "score": 0,
+      "credit": 0,
+      "needed": 5,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/map.ts",
+      "totalLines": 146,
+      "aiLines": 146,
+      "score": 0,
+      "credit": 0,
+      "needed": 4,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/runner.ts",
+      "totalLines": 116,
+      "aiLines": 116,
+      "score": 0,
+      "credit": 0,
+      "needed": 3,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/pipeline.ts",
+      "totalLines": 106,
+      "aiLines": 106,
+      "score": 0,
+      "credit": 0,
+      "needed": 3,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/glob.ts",
+      "totalLines": 94,
+      "aiLines": 94,
+      "score": 0,
+      "credit": 0,
+      "needed": 3,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/blame.ts",
+      "totalLines": 89,
+      "aiLines": 89,
+      "score": 0,
+      "credit": 0,
+      "needed": 3,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/ledger.ts",
+      "totalLines": 72,
+      "aiLines": 72,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/git.ts",
+      "totalLines": 70,
+      "aiLines": 70,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/github/store.ts",
+      "totalLines": 66,
+      "aiLines": 66,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/ai-detect.ts",
+      "totalLines": 62,
+      "aiLines": 62,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/github/main.ts",
+      "totalLines": 62,
+      "aiLines": 62,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/github/actions.ts",
+      "totalLines": 50,
+      "aiLines": 50,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    },
+    {
+      "file": "src/core/seal.ts",
+      "totalLines": 41,
+      "aiLines": 41,
+      "score": 0,
+      "credit": 0,
+      "needed": 2,
+      "people": [],
+      "misconceptions": 0,
+      "dark": true
+    }
+  ],
+  "options": {
+    "halfLifeDays": 90,
+    "linesPerProof": 40,
+    "minAiLines": 10,
+    "darkThreshold": 30
+  }
+}
