@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 — 2026-11-22
+
+- Published on the GitHub Marketplace.
+- Development workflows moved to `examples/workflows/` (Marketplace actions cannot contain workflow files). No changes to the action itself.
+
 ## 1.0.0 — 2026-11-22
 
 First release.
