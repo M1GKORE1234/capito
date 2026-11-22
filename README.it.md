@@ -199,7 +199,7 @@ npx github:M1GKORE1234/capito map --lang it                     # la tua mappa d
 
 ## Capito controlla sé stesso
 
-Capito è stato scritto con un agente AI, quindi gira anche sulle sue pull request (vedi [`.github/workflows/capito.yml`](.github/workflows/capito.yml)). La prima volta che è stato eseguito su `src/core/map.ts`, tutte e tre le modifiche provate sono **sopravvissute**: nessun test controllava i confini esatti dei colori della mappa, la regola «almeno 10 righe AI» o che i file capiti a metà finiscano nel ripasso. Ora quei test esistono ([`test/core.test.ts`](test/core.test.ts)) e le stesse mutazioni vengono scoperte.
+Capito è stato scritto con un agente AI, quindi l'abbiamo fatto girare su sé stesso (il workflow è in [`examples/workflows/capito-self-check.yml`](examples/workflows/capito-self-check.yml)). La prima volta che è stato eseguito su `src/core/map.ts`, tutte e tre le modifiche provate sono **sopravvissute**: nessun test controllava i confini esatti dei colori della mappa, la regola «almeno 10 righe AI» o che i file capiti a metà finiscano nel ripasso. Ora quei test esistono ([`test/core.test.ts`](test/core.test.ts)) e le stesse mutazioni vengono scoperte.
 
 ## Licenza
 
