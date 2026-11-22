@@ -1,5 +1,5 @@
 name: 'Capito — comprehension check for AI-written code'
-description: 'Asks 60-second questions about AI-written code, with answers verified by running your tests. Builds a comprehension map of your repo.'
+description: '60-second questions on AI-written code, verified by running your tests, plus a comprehension map of your repo.'
 author: 'Alessio Kore'
 branding:
   icon: 'help-circle'
